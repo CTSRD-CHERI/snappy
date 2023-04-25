@@ -1857,7 +1857,7 @@ class SnappyDecompressionValidator {
   inline SnappyDecompressionValidator() : expected_(0), produced_(0) {}
   inline void SetExpectedLength(size_t len) { expected_ = len; }
   size_t GetOutputPtr() { return produced_; }
-  size_t GetBase(ptrdiff_t* op_limit_min_slop) {
+  intptr_t GetBase(ptrdiff_t* op_limit_min_slop) {
     *op_limit_min_slop = std::numeric_limits<ptrdiff_t>::max() - kSlopBytes + 1;
     return 1;
   }
